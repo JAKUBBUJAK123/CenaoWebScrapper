@@ -7,10 +7,6 @@ from flask import render_template
 def index():
     return render_template('home.html')
 
-@app.route('/name/', defaults={'name' : "Anonim"})
-@app.route('/name/<name>')
-def name(name=None):
-    return f"Hello {name}"
 
 @app.route('/author')
 def author():
@@ -18,16 +14,11 @@ def author():
 
 @app.route('/ekstrakcja')
 def ekstrakcja():
-   
-    
-        
+   return render_template('ekstrakcja_opinii.html')
 
-    return render_template('ekstrakcja_opinii.html')
-
-@app.route('/lista_produktów')
+@app.route('/listaproduktow')
 def listaproduktow():
-
-    return render_template('lista_produktów.html')
+    return render_template('lista_produktow.html')
 
 @app.route('/produkt')
 def produkt():
